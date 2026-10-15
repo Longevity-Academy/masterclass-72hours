@@ -1263,9 +1263,10 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
     <div class="pk-grid reveal" id="packages" style="scroll-margin-top:96px">
       <article class="pk-card pk-standard">
         <div class="pk-top"><span class="pk-tier">Standard</span><span class="pk-len">60 min live</span></div>
+        <h3 class="pk-title">The Longevity <em>Masterclass</em></h3>
         <div class="pk-was"><s class="pk-was-old" aria-label="Full price $77">$77</s><span class="pk-off">36% off</span></div>
         <div class="pk-price"><sup>$</sup>49</div>
-        <h3 class="pk-title">The Longevity <em>Masterclass</em></h3>
+        <div class="pk-what"><b>The Longevity Masterclass</b><span>60 minutes, live on Zoom with Julie Gibson Clark</span></div>
         <dl class="pk-spec">
           <div><dt>Format</dt><dd>Live on Zoom with Julie Gibson Clark</dd></div>
           <div><dt>Length</dt><dd>60 minutes</dd></div>
@@ -1279,10 +1280,11 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
         <a class="offer-button pk-btn" href="#apply" data-plan="standard"><span>Reserve My Seat</span><span class="pk-arr" aria-hidden="true">&rarr;</span></a>
       </article>
       <article class="pk-card pk-vip">
-        <div class="pk-top"><span class="pk-tier">VIP</span><span class="pk-len">90 min with Julie</span></div>
+        <div class="pk-top"><span class="pk-tier">VIP Access</span><span class="pk-len">90 min with Julie</span></div>
+        <h3 class="pk-title">The Masterclass + <em>private Q&amp;A</em></h3>
         <div class="pk-was"><s class="pk-was-old" aria-label="Full price $124">$124</s><span class="pk-off">36% off</span></div>
         <div class="pk-price"><sup>$</sup>79</div>
-        <h3 class="pk-title">The Masterclass + <em>private Q&amp;A</em></h3>
+        <div class="pk-what"><b>VIP Access</b><span>The masterclass + a private 30-minute Q&amp;A with Julie. 90 minutes in total</span></div>
         <dl class="pk-spec">
           <div><dt>Format</dt><dd>Live on Zoom, then a private 30-minute Q&amp;A with Julie</dd></div>
           <div><dt>Length</dt><dd>90 minutes with Julie in total</dd></div>
@@ -3670,8 +3672,8 @@ var LLA_AC = (function(){
 <link rel="stylesheet" href="assets/julie-v8.css?v=11">
 <link rel="stylesheet" href="assets/julie-phone-fixes.css?v=20261014-1855">
 <!-- masterclass-72hours: 72-hour community offer layer (strip + pricing presentation). Appearance only; tracking, checkout and payment files untouched. -->
-<link rel="stylesheet" href="assets/julie-offer72.css?v=20261015-5">
-<script defer src="assets/julie-offer72.js?v=20261015-5"></script>
+<link rel="stylesheet" href="assets/julie-offer72.css?v=20261015-6">
+<script defer src="assets/julie-offer72.js?v=20261015-6"></script>
 <script>/* phone: hide the floating Enroll pill while the pricing cards (which carry their own buttons) are on screen */(function(){try{if(!matchMedia("(max-width:760px)").matches||!("IntersectionObserver" in window))return;var t=document.getElementById("pricing");if(!t)return;new IntersectionObserver(function(es){es.forEach(function(e){document.body.classList.toggle("pricing-in-view",e.isIntersecting);});},{threshold:0.05}).observe(t);}catch(e){}})();</script>
 
 <script src="assets/julie-international-checkout.js?v=20260924-1"></script>
