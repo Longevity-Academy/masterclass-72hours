@@ -77,40 +77,33 @@ body:has(#ckScreen[style*="block"]){padding-top:0}
 }
 @media(max-width:380px){.o72-title{font-size:17px}.o72-time span{min-width:38px;font-size:18px}.o72-cd-label{font-size:10px}}
 
-/* ---------- pricing cards: crossed-out full price + 36% label + new price large ---------- */
-.pk-was{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-family:'Codec Pro','Inter',sans-serif;font-weight:700;line-height:1}
-.pk-was-old{position:relative;display:inline-block;font-size:44px;letter-spacing:-.01em;color:#5A6780;padding:0 6px}
-.pk-was-old sup{font-size:.5em;vertical-align:top;margin-top:.2em;display:inline-block}
-.pk-vip .pk-was-old{color:#9FB9DE}
-/* the red X: two neon-red strokes through the full price */
-.pk-was-old::before,.pk-was-old::after{content:"";position:absolute;left:-6%;right:-6%;top:50%;height:3px;border-radius:3px;background:var(--o72-red);box-shadow:0 0 10px rgba(255,51,80,.75),0 0 22px rgba(255,51,80,.35);transform-origin:center}
-.pk-was-old::before{transform:translateY(-50%) rotate(-24deg)}
-.pk-was-old::after{transform:translateY(-50%) rotate(24deg)}
-.pk-off{display:inline-flex;align-items:center;gap:10px;font-size:19px;letter-spacing:.06em;text-transform:uppercase;color:var(--o72-royal);line-height:1}
-.pk-off b{font-size:30px;letter-spacing:-.01em;color:var(--o72-red);text-shadow:0 0 14px rgba(255,51,80,.35)}
-.pk-vip .pk-off{color:var(--o72-neon);text-shadow:0 0 12px rgba(125,211,255,.55)}
-.pk-vip .pk-off b{color:#FF5C73;text-shadow:0 0 14px rgba(255,92,115,.6)}
-.pk-vip .pk-was-old{-webkit-text-fill-color:#9FB9DE}
-.pk-vip .pk-off,.pk-vip .pk-off b{-webkit-text-fill-color:currentColor}
+/* ---------- pricing cards: struck-through full price beside the large community price, one quiet label ---------- */
+html body #pricing .pk-price{display:flex!important;flex-wrap:wrap;align-items:baseline;column-gap:0}
+.pk-was-old{font-size:.56em;font-weight:600;letter-spacing:-.01em;color:#8A96AE;text-decoration:line-through;text-decoration-thickness:.07em;text-decoration-color:#8A96AE;line-height:1;margin-right:.3em}
+.pk-was-old sup{font-size:.55em;vertical-align:top;display:inline-block;margin-top:.1em}
+.pk-vip .pk-was-old{color:#9FB9DE;text-decoration-color:#9FB9DE;-webkit-text-fill-color:#9FB9DE}
+.pk-off{display:block;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:600;letter-spacing:0;line-height:1.2;color:#0A2240}
+.pk-vip .pk-off{color:#DCEAFF;-webkit-text-fill-color:#DCEAFF}
 
 @media(min-width:761px){
-  html body #pricing .pk-card{grid-template-areas:"top top" "was was" "price title" "spec spec" "btn btn"!important;grid-template-rows:auto auto auto auto 1fr!important}
-  html body #pricing .pk-was{grid-area:was;margin:4px 0 14px}
-  html body #pricing .pk-price{display:flex!important;flex-wrap:wrap;align-items:baseline;font-size:clamp(66px,5vw,80px)!important;line-height:.92!important}
-  html body #pricing .pk-price::after{content:"Your community price";display:block;flex-basis:100%;width:100%;font:600 15px/1.2 'Inter',sans-serif;letter-spacing:.02em;color:#56627A;margin-top:10px}
-  html body #pricing .pk-vip .pk-price::after{color:#BFE3FF;-webkit-text-fill-color:#BFE3FF}
-  html body #pricing .pk-title{font-size:clamp(24px,1.8vw,28px)!important}
+  html body #pricing .pk-card{grid-template-areas:"top top" "price title" "was title" "spec spec" "btn btn"!important;grid-template-rows:auto auto auto auto 1fr!important;align-items:start!important}
+  html body #pricing .pk-top{margin:0 0 18px}
+  html body #pricing .pk-price{grid-area:price;align-self:end;font-size:clamp(72px,5.4vw,88px)!important;line-height:.9!important}
+  html body #pricing .pk-price::after{content:none!important}
+  html body #pricing .pk-was{grid-area:was;margin:12px 0 6px}
+  html body #pricing .pk-off{font-size:23px}
+  html body #pricing .pk-title{align-self:center;font-size:clamp(24px,1.8vw,28px)!important}
+  html body #pricing .pk-spec{margin-top:16px!important}
   html body #pricing .pk-spec dd{font-size:18px!important}
   html body #pricing .pk-ul li{font-size:17px!important}
   html body #pricing .pk-ul li:nth-child(3){padding-right:0}
 }
 @media(max-width:760px){
-  html body #pricing .pk-card{grid-template-areas:"top top" "title title" "was was" "price price" "btn btn" "spec spec"!important}
-  html body #pricing .pk-was{grid-area:was;margin:18px 0 0;gap:12px}
-  .pk-was-old{font-size:34px}
-  .pk-off{font-size:16px;letter-spacing:.05em}
-  .pk-off b{font-size:26px}
-  html body #pricing .pk-price{font-size:64px!important;margin:8px 0 0!important}
-  html body #pricing .pk-price::after{content:"Your community price. 14-day full refund."!important;font-size:15px!important}
+  html body #pricing .pk-card{grid-template-areas:"top top" "title title" "price price" "was was" "btn btn" "spec spec"!important}
+  html body #pricing .pk-price{font-size:66px!important;margin:20px 0 0!important;gap:0;column-gap:0}
+  html body #pricing .pk-price sup{font-size:.4em!important;align-self:flex-start;margin-top:.12em!important}
+  html body #pricing .pk-price::after{content:none!important}
+  html body #pricing .pk-was{grid-area:was;margin:10px 0 0}
+  html body #pricing .pk-off{font-size:20px}
   html body #pricing .pk-spec dd,html body #pricing .pk-ul li{font-size:17.5px!important}
 }
