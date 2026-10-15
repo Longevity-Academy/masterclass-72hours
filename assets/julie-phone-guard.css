@@ -1,0 +1,12 @@
+/* Phone guard 2026-10-15: layout survives Android text scaling; nothing escapes the screen or its card. */
+@media (max-width: 768px){
+  html, body { overflow-x: clip !important; max-width: 100% !important; }
+  .pk-was { display: flex !important; flex-wrap: wrap !important; align-items: baseline; column-gap: 16px; row-gap: 2px; max-width: 100%; }
+  .pk-was .pk-off { white-space: nowrap; }
+  .pk-btn { max-width: 100% !important; box-sizing: border-box; width: 100% !important; justify-content: center !important; height: auto !important; padding-top: 14px !important; padding-bottom: 14px !important; }
+  .pk-btn span:first-child { white-space: normal !important; text-align: center; line-height: 1.15; }
+  .pk-head::after { content: "Reserve your seat below. 2 minutes, 14-day full refund." !important; }
+  #pricing .pk-head h2 { white-space: normal !important; text-wrap: balance; }
+  #pricing .pk-head h2 .serif-i { white-space: normal !important; }
+  img { color: transparent; }
+}
