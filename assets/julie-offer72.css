@@ -77,33 +77,45 @@ body:has(#ckScreen[style*="block"]){padding-top:0}
 }
 @media(max-width:380px){.o72-title{font-size:17px}.o72-time span{min-width:38px;font-size:18px}.o72-cd-label{font-size:10px}}
 
-/* ---------- pricing cards: struck-through full price beside the large community price, one quiet label ---------- */
-html body #pricing .pk-price{display:flex!important;flex-wrap:wrap;align-items:baseline;column-gap:0}
-.pk-was-old{font-size:.56em;font-weight:600;letter-spacing:-.01em;color:#8A96AE;text-decoration:line-through;text-decoration-thickness:.07em;text-decoration-color:#8A96AE;line-height:1;margin-right:.3em}
-.pk-was-old sup{font-size:.55em;vertical-align:top;display:inline-block;margin-top:.1em}
+/* ---------- pricing cards: one vertical hierarchy. Tier, title, large price, struck full price + label, specs, button. ---------- */
+.pk-was{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:18px;row-gap:6px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.1}
+.pk-was-old{font-family:'Codec Pro','Inter',sans-serif;font-weight:600;color:#8A96AE;text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:#8A96AE;letter-spacing:-.01em}
 .pk-vip .pk-was-old{color:#9FB9DE;text-decoration-color:#9FB9DE;-webkit-text-fill-color:#9FB9DE}
-.pk-off{display:block;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:600;letter-spacing:0;line-height:1.2;color:#0A2240}
-.pk-vip .pk-off{color:#DCEAFF;-webkit-text-fill-color:#DCEAFF}
+.pk-off{font-weight:600;color:#0A2240;letter-spacing:0}
+.pk-vip .pk-off{color:#EAF2FF;-webkit-text-fill-color:#EAF2FF}
 
 @media(min-width:761px){
-  html body #pricing .pk-card{grid-template-areas:"top top" "price title" "was title" "spec spec" "btn btn"!important;grid-template-rows:auto auto auto auto 1fr!important;align-items:start!important}
-  html body #pricing .pk-top{margin:0 0 18px}
-  html body #pricing .pk-price{grid-area:price;align-self:end;font-size:clamp(72px,5.4vw,88px)!important;line-height:.9!important}
+  html body #pricing .pk-grid{gap:32px;align-items:stretch}
+  html body #pricing .pk-card{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-areas:"top" "title" "price" "was" "spec" "btn"!important;grid-template-rows:auto auto auto auto 1fr auto!important;align-items:start!important;padding:36px 40px 36px!important;border-radius:28px!important}
+  html body #pricing .pk-top{grid-area:top;margin:0 0 22px}
+  html body #pricing .pk-tier{font-size:17px!important}
+  html body #pricing .pk-len{font-size:15px!important;padding:9px 16px!important}
+  html body #pricing .pk-title{grid-area:title;margin:0 0 18px!important;font-size:clamp(32px,2.6vw,40px)!important;line-height:1.08!important;max-width:none;text-wrap:balance}
+  html body #pricing .pk-price{grid-area:price;display:flex!important;align-items:flex-start;margin:0!important;font-size:clamp(96px,7.2vw,116px)!important;line-height:.88!important;letter-spacing:-.03em}
+  html body #pricing .pk-price sup{font-size:.4em!important;margin-top:.1em;margin-right:.04em}
   html body #pricing .pk-price::after{content:none!important}
-  html body #pricing .pk-was{grid-area:was;margin:12px 0 6px}
-  html body #pricing .pk-off{font-size:23px}
-  html body #pricing .pk-title{align-self:center;font-size:clamp(24px,1.8vw,28px)!important}
-  html body #pricing .pk-spec{margin-top:16px!important}
-  html body #pricing .pk-spec dd{font-size:18px!important}
-  html body #pricing .pk-ul li{font-size:17px!important}
+  html body #pricing .pk-was{grid-area:was;margin:18px 0 0;padding-bottom:24px;border-bottom:1px solid rgba(10,34,64,.12)}
+  html body #pricing .pk-vip .pk-was{border-bottom-color:rgba(255,255,255,.18)}
+  html body #pricing .pk-was-old{font-size:34px}
+  html body #pricing .pk-off{font-size:24px}
+  html body #pricing .pk-spec{grid-area:spec;margin:6px 0 24px!important}
+  html body #pricing .pk-spec>div{grid-template-columns:120px 1fr!important;gap:18px!important;padding:12px 0!important}
+  html body #pricing .pk-spec dt{font-size:15px!important;padding-top:4px!important}
+  html body #pricing .pk-spec dd{font-size:19px!important;line-height:1.42!important}
+  html body #pricing .pk-ul li{font-size:18px!important;line-height:1.4!important;margin-bottom:7px!important}
   html body #pricing .pk-ul li:nth-child(3){padding-right:0}
+  html body #pricing .pk-btn{grid-area:btn;min-height:64px!important;font-size:20px!important;padding:18px 28px!important;border-radius:16px!important}
 }
 @media(max-width:760px){
-  html body #pricing .pk-card{grid-template-areas:"top top" "title title" "price price" "was was" "btn btn" "spec spec"!important}
-  html body #pricing .pk-price{font-size:66px!important;margin:20px 0 0!important;gap:0;column-gap:0}
-  html body #pricing .pk-price sup{font-size:.4em!important;align-self:flex-start;margin-top:.12em!important}
+  html body #pricing .pk-card{grid-template-areas:"top top" "title title" "price price" "was was" "btn btn" "spec spec"!important;padding:26px 22px 24px!important}
+  html body #pricing .pk-tier{font-size:14px!important}
+  html body #pricing .pk-title{font-size:34px!important}
+  html body #pricing .pk-price{font-size:84px!important;line-height:.9!important;margin:22px 0 0!important;gap:0;letter-spacing:-.03em}
+  html body #pricing .pk-price sup{font-size:.4em!important;align-self:flex-start;margin-top:.1em!important}
   html body #pricing .pk-price::after{content:none!important}
-  html body #pricing .pk-was{grid-area:was;margin:10px 0 0}
-  html body #pricing .pk-off{font-size:20px}
-  html body #pricing .pk-spec dd,html body #pricing .pk-ul li{font-size:17.5px!important}
+  html body #pricing .pk-was{grid-area:was;margin:14px 0 4px;column-gap:14px}
+  html body #pricing .pk-was-old{font-size:28px}
+  html body #pricing .pk-off{font-size:21px}
+  html body #pricing .pk-btn{min-height:62px!important;font-size:19px!important}
+  html body #pricing .pk-spec dd,html body #pricing .pk-ul li{font-size:18px!important}
 }
