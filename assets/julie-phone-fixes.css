@@ -86,7 +86,7 @@
   html body #pricing .pk-tier{font-size:12px!important;letter-spacing:.14em!important}
   html body #pricing .pk-len{font-size:12px!important;padding:6px 10px!important;border-radius:999px!important}
   html body #pricing .pk-price{grid-area:price;display:flex!important;align-items:baseline;gap:8px;font-size:46px!important;line-height:1!important;margin:18px 0 0!important}
-  html body #pricing .pk-price::after{content:"One payment. 14-day full refund.";font:500 14.5px/1.3 'Inter',sans-serif;letter-spacing:0;color:#56627A;-webkit-text-fill-color:#56627A;margin-left:2px}
+  html body #pricing .pk-price::after{content:"One payment.";font:500 14.5px/1.3 'Inter',sans-serif;letter-spacing:0;color:#56627A;-webkit-text-fill-color:#56627A;margin-left:2px}
   html body #pricing .pk-vip .pk-price::after{color:#BFE3FF;-webkit-text-fill-color:#BFE3FF}
   html body #pricing .pk-price sup{font-size:20px!important;margin:0!important;align-self:flex-start;line-height:1.2!important}
   html body #pricing .pk-price{gap:4px}
@@ -227,7 +227,7 @@
   /* bullets in cards: one font, readable */
   html body #pricing .pk-ul li,html body #pricing .pk-spec dd,html body .tbody li,html body .dv-pdp-value-card li{font:500 16.5px/1.45 'Inter',sans-serif!important;letter-spacing:0!important}
   html body #pricing .pk-title{font-size:30px!important}
-  html body #pricing .pk-head::after{content:"Reserve your seat below — 2 minutes, 14-day full refund.";display:block;margin-top:10px;font:600 14px/1.3 'Inter',sans-serif;letter-spacing:.02em;color:#BFE3FF;-webkit-text-fill-color:#BFE3FF}
+  html body #pricing .pk-head::after{content:"Reserve your seat below. One-time payment.";display:block;margin-top:10px;font:600 14px/1.3 'Inter',sans-serif;letter-spacing:.02em;color:#BFE3FF;-webkit-text-fill-color:#BFE3FF}
   html body #julie .jb-vid video,html body #julie .jb-wide video{width:100%!important;height:auto!important;display:block!important}
   /* enrol steps 1–2: Continue follows the form */
   html body #enrollModal .em-go,html body #enrollModal #emGo1,html body #enrollModal #emGo2{position:static!important;bottom:auto!important;margin-top:16px!important}
