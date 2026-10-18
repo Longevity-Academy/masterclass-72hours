@@ -1,12 +1,17 @@
-/* masterclass-72hours: fixed offer strip with a 72-hour countdown per visitor (localStorage). Appearance only. No tracking, no network, no checkout code. */
+/* masterclass-72hours: one fixed campaign deadline shared by every visitor.
+   No per-visitor timer, renewal, tracking, network or checkout changes. */
 (function(){
   'use strict';
-  /* ONE universal deadline for every visitor: campaign starts Sun 18 Oct 2026 16:00 Israel time (13:00 UTC), ends exactly 72 hours later, Wed 21 Oct 2026 16:00 Israel time. Before the start it holds at 72:00:00. */
-  var WINDOW=72*3600*1000, START=Date.UTC(2026,9,18,13,0,0), end=START+WINDOW;
+  /* Start: Sun 18 Oct 2026, 17:00 Israel (14:00 UTC).
+     End: Wed 21 Oct 2026, 17:00 Israel (14:00 UTC), exactly 72 hours later.
+     A reload, new browser or cleared storage never restarts this clock. */
+  var WINDOW=72*3600*1000, START=Date.UTC(2026,9,18,14,0,0), end=START+WINDOW;
   try{ localStorage.removeItem('lla_offer72_end_v1'); }catch(e){}
 
   var strip=document.createElement('aside');
   strip.className='o72-strip'; strip.id='o72'; strip.setAttribute('role','status'); strip.setAttribute('aria-label','72-hour community offer');
+  strip.setAttribute('data-starts-at',new Date(START).toISOString());
+  strip.setAttribute('data-ends-at',new Date(end).toISOString());
   strip.innerHTML=
     '<div class="o72-head"><span class="o72-dot" aria-hidden="true"></span>'+
       '<span class="o72-title"><b>36% off</b> community discount</span>'+
@@ -28,6 +33,9 @@
     s.textContent=pad(Math.floor(d%60000/1000));
   }
   tick(); setInterval(tick,1000);
+  /* Catch up immediately after returning to a sleeping/background tab or bfcache. */
+  document.addEventListener('visibilitychange',tick);
+  window.addEventListener('pageshow',tick);
 
   /* strip CTA scrolls to the pricing cards (same anchor as the existing nav/floater links) */
   function go(ev){
