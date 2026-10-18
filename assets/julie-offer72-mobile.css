@@ -55,3 +55,27 @@
   html body #pricing .pk-price{font-size:78px!important}
   html body #pricing .pk-btn{font-size:18px!important}
 }
+/* phone section order: hero, what you'll learn, pricing, about Julie, then the rest; press + academy before the footer */
+@media(max-width:760px){
+  body>header.hero{order:2!important}
+  body>#reveal{order:3!important}
+  body>#pricing{order:4!important}
+  body>#julie{order:5!important}
+  body>#dv-live-wrap{order:6!important}
+  body>#how{order:7!important}
+  body>.mq-band{order:8!important}
+  body>#press{order:9!important}
+  body>#school{order:10!important}
+  body>#faq{order:11!important}
+  body>.band{order:12!important}
+  body>footer{order:13!important}
+}
+/* hero date chips: two equal chips, one clean line each, centred */
+@media(max-width:760px){
+  html body header#top.hero .hero-copy p.hero-dates-line{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;font-size:0!important;color:transparent!important;width:100%!important}
+  html body header#top.hero .hero-copy p.hero-dates-line span{display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important;box-sizing:border-box!important;text-align:center!important;white-space:nowrap!important;font:700 17px/1.2 'Inter',sans-serif!important;padding:13px 14px!important;color:#fff!important}
+  /* How it works header centred like every other section header */
+  html body #how .shead{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+  html body #how .shead p{margin-left:auto!important;margin-right:auto!important}
+}
+@media(max-width:374px){html body header#top.hero .hero-copy p.hero-dates-line span{font-size:15.5px!important}}
