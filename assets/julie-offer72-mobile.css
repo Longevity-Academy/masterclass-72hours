@@ -1,0 +1,57 @@
+/* masterclass-72hours : FINAL mobile pricing-card layer (appearance only, <=760px).
+   No checkout, tracking or data-plan changes. Loaded last. */
+@media(max-width:760px){
+  html body #pricing .pk-grid{display:flex!important;flex-direction:column!important;gap:22px!important;padding:0!important}
+  html body #pricing .pk-card{display:flex!important;flex-direction:column!important;align-items:stretch!important;text-align:left!important;padding:28px 22px 26px!important;border-radius:26px!important;width:100%!important;box-sizing:border-box!important;transform:none!important}
+  html body #pricing .pk-card>*{grid-area:auto!important;max-width:100%!important}
+  html body #pricing .pk-top{order:1;margin:0 0 10px!important}
+  html body #pricing .pk-tier{font-size:15px!important;letter-spacing:.16em!important}
+  html body #pricing .pk-title{order:2;font-size:36px!important;line-height:1.06!important;margin:0 0 18px!important;text-align:left!important;text-wrap:balance}
+  html body #pricing .pk-title em{display:inline!important}
+  /* price block: old price + 36% OFF on one baseline */
+  html body #pricing .pk-was{order:3;display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:14px!important;font-size:40px!important;margin:0 0 6px!important;line-height:1!important}
+  html body #pricing .pk-was-old{font-size:1em!important}
+  html body #pricing .pk-was-old::after{transform:translateY(-50%) rotate(-8deg)!important;height:.08em!important}
+  html body #pricing .pk-off{font-size:18px!important;font-family:'Inter',sans-serif!important;font-weight:800!important;letter-spacing:.04em!important;padding:7px 12px!important;border-radius:999px!important;background:rgba(0,110,255,.10)!important;line-height:1!important;text-shadow:none!important}
+  html body #pricing .pk-vip .pk-off{background:rgba(125,211,255,.16)!important}
+  html body #pricing .pk-price{order:4;display:flex!important;align-items:flex-start!important;font-size:88px!important;line-height:.9!important;margin:4px 0 12px!important;letter-spacing:-.04em!important;transform:none!important}
+  html body #pricing .pk-price sup{font-size:.4em!important;margin:.12em .04em 0 0!important;line-height:1!important;top:0!important;position:relative!important}
+  html body #pricing .pk-what{order:5;display:block!important;margin:0 0 20px!important;align-self:stretch!important}
+  html body #pricing .pk-what b{display:block!important;font-size:20px!important;line-height:1.2!important;margin:0 0 2px!important}
+  html body #pricing .pk-what span{display:block!important;font-size:17px!important;line-height:1.35!important}
+  /* CTA: full width, centred, identical on both cards */
+  html body #pricing .pk-btn{order:6;position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:10px!important;width:100%!important;max-width:none!important;min-height:64px!important;margin:0 0 22px!important;padding:16px 20px!important;border-radius:999px!important;font-size:20px!important;line-height:1.1!important;text-align:center!important;white-space:nowrap!important;box-sizing:border-box!important;transform:none!important}
+  html body #pricing .pk-btn::before{display:none!important;content:none!important}
+  html body #pricing .pk-btn span{display:inline!important;font-size:inherit!important}
+  html body #pricing .pk-btn .pk-arr{display:inline!important}
+  html body #pricing .pk-standard .pk-btn{background:#006EFF!important;color:#fff!important}
+  html body #pricing .pk-standard .pk-btn span{color:#fff!important;-webkit-text-fill-color:#fff!important}
+  html body #pricing .pk-vip .pk-btn{background:#fff!important;color:#0047B3!important}
+  html body #pricing .pk-vip .pk-btn span,html body #pricing .pk-vip .pk-btn .pk-arr{color:#0047B3!important;-webkit-text-fill-color:#0047B3!important}
+  /* what's included: same type, same rows, both cards */
+  html body #pricing .pk-spec{order:7;display:block!important;margin:0!important;padding:18px 0 0!important;border-top:1px solid rgba(10,34,64,.14)!important;width:100%!important}
+  html body #pricing .pk-vip .pk-spec{border-top-color:rgba(255,255,255,.24)!important}
+  html body #pricing .pk-spec::before,html body #pricing .pk-spec::after,html body #pricing .pk-vip .pk-spec::before,html body #pricing .pk-vip .pk-spec::after{display:none!important;content:none!important}
+  html body #pricing .pk-spec>div,html body #pricing .pk-standard .pk-spec>div:nth-child(1),html body #pricing .pk-standard .pk-spec>div:last-child{display:block!important;margin:0!important;padding:12px 0!important;background:none!important;border:0!important;border-radius:0!important;border-bottom:1px solid rgba(10,34,64,.08)!important}
+  html body #pricing .pk-vip .pk-spec>div{border-bottom-color:rgba(255,255,255,.14)!important}
+  html body #pricing .pk-spec>div:last-child{border-bottom:0!important}
+  html body #pricing .pk-spec dt{display:block!important;font:800 12.5px/1.2 'Inter',sans-serif!important;letter-spacing:.14em!important;text-transform:uppercase!important;margin:0 0 5px!important;padding:0!important;color:#006EFF!important;-webkit-text-fill-color:#006EFF!important}
+  html body #pricing .pk-vip .pk-spec dt{color:#BFE3FF!important;-webkit-text-fill-color:#BFE3FF!important}
+  html body #pricing .pk-spec dd,html body #pricing .pk-standard .pk-spec dd,html body #pricing .pk-vip .pk-spec dd,html body #pricing .pk-standard .pk-spec>div:last-child dd{display:block!important;margin:0!important;padding:0!important;font:500 17.5px/1.42 'Inter',sans-serif!important;letter-spacing:0!important;word-spacing:0!important;text-align:left!important}
+  html body #pricing .pk-spec dd::before{display:none!important;content:none!important}
+  html body #pricing .pk-standard .pk-spec dd{color:#0F1E36!important;-webkit-text-fill-color:#0F1E36!important}
+  html body #pricing .pk-vip .pk-spec dd{color:#fff!important;-webkit-text-fill-color:#fff!important}
+  html body #pricing .pk-ul{margin:2px 0 0!important;padding:0!important;list-style:none!important}
+  html body #pricing .pk-card .pk-spec dd .pk-ul li,html body #pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3),html body #pricing .pk-ul li{position:relative!important;font:500 17.5px/1.42 'Inter',sans-serif!important;letter-spacing:0!important;word-spacing:0!important;margin:0 0 8px!important;padding:0 0 0 18px!important}
+  html body #pricing .pk-card .pk-spec dd .pk-ul li::before,html body #pricing .pk-ul li::before{content:""!important;position:absolute!important;left:0!important;top:.6em!important;width:7px!important;height:7px!important;border-radius:50%!important;background:#006EFF!important}
+  html body #pricing .pk-foot{text-align:center!important;font-size:16px!important;margin-top:20px!important}
+  html body #pricing .pk-standard .pk-price,html body #pricing .pk-standard .pk-price sup{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;color:#0A1E3A!important;-webkit-text-fill-color:#0A1E3A!important}
+  html body #pricing .pk-vip .pk-price,html body #pricing .pk-vip .pk-price sup{color:#fff!important;-webkit-text-fill-color:#fff!important}
+  html body #pricing .pk-spec dd,html body #pricing .pk-spec dt,html body #pricing .pk-spec>div{max-width:none!important;width:auto!important;text-wrap:pretty!important}
+  html body #pricing .pk-spec>div{display:block!important;grid-template-columns:none!important}
+}
+@media(max-width:374px){
+  html body #pricing .pk-title{font-size:32px!important}
+  html body #pricing .pk-price{font-size:78px!important}
+  html body #pricing .pk-btn{font-size:18px!important}
+}
